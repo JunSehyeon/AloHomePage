@@ -1,8 +1,9 @@
 import React, { useEffect,useState } from 'react'
 import ProductCard from '../component/ProductCard';
+import {Container,Row,Col} from "react-bootstrap"
 
 const ProductAll = () => {
-  const [productlist,setProductList]=useState([]);
+  const [productList,setProductList]=useState([]);
   const getProducts=async()=>{
     let url='http://localhost:4000/products'
     let response=await fetch(url);
@@ -14,6 +15,15 @@ const ProductAll = () => {
   },[])
   return (
     <div>
+      <Container>
+        <Row>
+          {productList.map((menu)=>(
+             <Col lg={3} key={menu.id}>
+              <ProductCard item={menu}/>
+             </Col>
+          ))}
+        </Row>
+      </Container>
       <ProductCard/>
     </div>
   )

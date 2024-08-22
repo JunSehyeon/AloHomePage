@@ -1,15 +1,21 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
-const ProductCard = () => {
+
+const ProductCard = ({item}) => {
+  const navigate=useNavigate();
+  const showDetail=()=>{
+    navigate(`/product/${item.id}`)
+  }
   return (
-    <div>
-      <img width={300} src='https://cdn.shopify.com/s/files/1/2185/2813/files/W9791R_01_b2_s1_a1_2_m208_1500x.jpg?v=1723071047'/>
-      <div>Conscious choice</div>
-      <div>벨티드 트윌 코트</div>
-      <div>99$</div>
-      <div>신제품</div>
+    <div className='card' onClick={showDetail}>
+      <img width={300} src={item?.img}/>
+      <div>{item?.choice==true?"Concious choice":""}</div>
+      <div>{item?.title}</div>
+      <div>{item?.price}</div>
+      <div>{item?.new==true?"NEW":""}</div>
     </div>
   )
 }
 
-export default ProductCard
+export default ProductCard;

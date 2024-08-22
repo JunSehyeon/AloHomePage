@@ -12,9 +12,15 @@
 
 .login-button{
   display: flex;
+  align-items: center; /* 아이콘과 텍스트를 동일선상에 배치 */
+  gap: 8px; /* 아이콘과 텍스트 사이의 간격 */
+  cursor: pointer;
+}
+
+.together{
+  display: flex;
   align-items: center;
   gap: 10px; /* 아이콘과 텍스트 사이의 간격 */
-  cursor: pointer;
 }
 
 .nav-logo{
@@ -49,4 +55,72 @@
 
 .search-container input::placeholder {
   color: #aaa; /* 회색 글씨로 placeholder 스타일링 */
+}
+
+.login-button:hover {
+  background-color: #f0f0f0; /* 버튼의 배경색 변경 */
+  color: #000; /* 텍스트 색상 변경 */
+  border-radius: 5px; /* 버튼에 둥근 모서리 추가 */
+}
+
+.card {
+  transition: transform 0.3s ease; /* 부드럽게 변화를 주기 위한 transition */
+  height: 400px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: none;
+  box-shadow: none;
+  background: none;
+}
+
+.card img {
+  width: 100%; /* 이미지가 카드 너비에 맞도록 조절 */
+  height: 60%; /* 이미지가 카드 높이의 60%를 차지하도록 설정 */
+  object-fit: cover; /* 이미지 비율을 유지하며 카드에 맞게 조절 */
+}
+
+.card:hover {
+  transform: scale(1.05); /* 마우스를 올리면 카드가 1.05배 확대 */
+}
+
+/*  미니 과제 css  */
+
+.product-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.product-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+
+.product-details h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.product-details h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.product-details .form-group {
+  margin-bottom: 15px;
+}
+
+.product-details .btn {
+  margin-top: 10px;
 }
