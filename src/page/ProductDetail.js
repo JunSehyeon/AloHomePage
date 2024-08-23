@@ -7,9 +7,8 @@ const ProductDetail = () => {
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    // 실제 API 요청을 통해 데이터를 가져오는 부분입니다.
     const fetchProduct = async () => {
-      let response = await fetch(`http://localhost:4000/products/${id}`);
+      let response = await fetch(`https://my-json-server.typicode.com/JunSehyeon/AloHomePage/products/${id}`);
       let data = await response.json();
       setProduct(data);
     };
@@ -23,7 +22,7 @@ const ProductDetail = () => {
     <Container>
       <Row>
         <Col lg={6} className="product-image">
-          <img width={300} src={product.img} alt={product.title} className="img-fluid" />
+          <img src={product.img} alt={product.title} className="img-fluid" />
         </Col>
         <Col lg={6} className="product-details">
           <h1>{product.title}</h1>

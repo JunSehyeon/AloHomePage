@@ -5,12 +5,12 @@ import Form from 'react-bootstrap/Form';
 import { useNavigate } from 'react-router-dom';
 
 
-const Login = ({setAutenticate}) => {
+const Login = ({setAuthenticate}) => {
   const navigate=useNavigate();
   const loginUser =(event)=>{
     event.preventDefault();
     console.log("ssss")
-    setAutenticate(true)
+    setAuthenticate(true)
     navigate("/")
   }
   return (
