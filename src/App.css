@@ -1,63 +1,94 @@
+/* 공통 네비게이션 바 스타일 */
 .navbar-container {
   display: flex;
   justify-content: space-between; /* 로고와 로그인 버튼을 양쪽 끝에 배치 */
   align-items: center; /* 수직 중앙 정렬 */
   padding: 10px 20px; /* 여백 추가 */
-  background-color: #918e8e; /* 네비게이션 바의 배경색 */
+  background-color: #ffffff; /* 네비게이션 바의 배경색을 화이트로 변경 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 네비게이션 바에 그림자 추가 */
 }
 
-.nav-logo-menu {
-  display: flex;
-  align-items: center; /* 로고와 메뉴 리스트를 수직 중앙 정렬 */
+/* PC 버전 메뉴 스타일 */
+@media (min-width: 992px) {
+  .navbar-container {
+    margin-bottom: 20px; /* 네비게이션 바와 아래쪽 상품 카드 사이에 공간 추가 */
+  }
+
+  .menuList {
+    display: flex;
+    list-style: none; /* 불릿 제거 */
+    gap: 15px; /* 메뉴 항목 간의 간격 */
+    margin: 0;
+    padding: 0;
+  }
+
+  .menuList li {
+    color: #000; /* 메뉴 항목의 텍스트 색상을 검정색으로 변경 */
+    font-weight: 600; /* 메뉴 항목의 글씨 굵기를 더 굵게 */
+    cursor: pointer; /* 클릭 가능한 스타일 */
+    padding: 10px; /* 메뉴 항목의 여백 */
+  }
 }
 
-.menuList {
-  display: flex;
-  list-style: none; /* 불릿 제거 */
-  gap: 15px; /* 메뉴 항목 간의 간격 */
-  margin: 0;
-  padding: 0;
+/* 모바일 버전 메뉴 스타일 */
+@media (max-width: 992px) {
+  .d-lg-none {
+    display: block;
+  }
+
+  .search-container input {
+    border: none;
+    background: transparent;
+    color: #000; /* 모바일에서 검색창 텍스트 색상 변경 */
+  }
 }
 
-.menuList li {
-  color: #fff; /* 메뉴 항목의 텍스트 색상 */
-  cursor: pointer; /* 클릭 가능한 스타일 */
-  padding: 10px; /* 메뉴 항목의 여백 */
-}
-
-.together {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* 아이콘과 텍스트 사이의 간격 */
-}
-
+/* 검색창 스타일 */
 .search-container {
   display: flex;
   align-items: center;
-  padding: 5px;
-  border-radius: 5px;
+  border-bottom: 2px solid #000; /* 검정색 밑줄 추가 */
+  padding: 5px 0; /* 위아래 여백 추가 */
+  background-color: transparent; /* 배경색 투명 */
 }
 
 .search-container input {
   border: none;
   background: transparent;
-  color: #fff;
-  padding-left: 5px;
+  color: #000; /* 텍스트 색상 검정색 */
+  padding-left: 5px; /* 왼쪽 여백 */
+  outline: none; /* 포커스 시 기본 윤곽선 제거 */
+  font-size: 14px; /* 폰트 사이즈 조정 */
 }
 
-.d-lg-none {
-  display: none;
+.search-container input::placeholder {
+  color: #999; /* 플레이스홀더 색상 조정 */
 }
 
+/* 검색 아이콘 스타일 */
+.search-container .input-group-text {
+  background: transparent;
+  border: none; /* 검색 아이콘 주변의 기본 테두리 제거 */
+  color: #000; /* 검색 아이콘 색상 검정색 */
+  font-size: 16px; /* 아이콘 사이즈 조정 */
+  padding: 0; /* 아이콘 주변의 여백 제거 */
+  margin-right: 5px; /* 검색 아이콘과 입력창 사이의 간격 조정 */
+}
+
+/* 모바일과 PC 버전 모두 적용 */
 @media (max-width: 992px) {
-  .d-lg-none {
-    display: block;
+  .search-container {
+    border-bottom: 1px solid #000; /* 모바일 버전에서 밑줄 두께 조정 */
   }
 }
 
+/* 로그인 버튼 스타일 */
 .login-button {
   display: flex;
   align-items: center; /* 아이콘과 텍스트를 동일선상에 배치 */
   gap: 8px; /* 아이콘과 텍스트 사이의 간격 */
   cursor: pointer; /* 커서를 손가락 모양으로 변경 */
 }
+
+
+

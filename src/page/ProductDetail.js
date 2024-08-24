@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Container, Row, Col, Button, Form } from 'react-bootstrap';
+import './ProductDetail.css';
+
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -19,7 +21,7 @@ const ProductDetail = () => {
   if (!product) return <div>Loading...</div>;
 
   return (
-    <Container>
+    <Container className="product-detail-container">
       <Row>
         <Col lg={6} className="product-image">
           <img src={product.img} alt={product.title} className="img-fluid" />

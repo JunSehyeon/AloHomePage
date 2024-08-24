@@ -7,7 +7,6 @@ import { useSearchParams } from 'react-router-dom';
 const ProductAll = () => {
   const [productList,setProductList]=useState([]);
   const [query, setQuery]=useSearchParams()
-  //let [error, setError] = useState("");
 
   const getProducts=async()=>{
    
@@ -18,25 +17,6 @@ const ProductAll = () => {
     let data=await response.json();
     console.log("받은 데이터:", data);
     setProductList(data)
-    
-  /*
-    try {
-      let keyword = query.get("q") || "";
-      let url = `http://localhost:4000/products?q=${keyword}`;
-      let response = await fetch(url);
-      let data = await response.json();
-      if (data.length < 1) {
-        if (keyword !== "") {
-          setError(`${keyword}와 일치하는 상품이 없습니다`);
-        } else {
-          throw new Error("결과가 없습니다");
-        }
-      }
-      setProductList(data);
-    } catch (err) {
-      setError(err.message);
-    }
-  */
   }
 
   useEffect(()=>{
